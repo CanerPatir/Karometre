@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "Sahibinden Karometre",
+  "description": "Sahibinden.com Metrekare Fiyatı Belirleme Aracı",
+  "version": "1",
+  "author": "Caner Patır",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.sahibinden.com/*",
+        "https://*.sahibinden.com/*"
+      ],
+      "js": [
+        "jquery-3.3.1.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+    
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "declarativeContent"
+  ],
+  "page_action": {
+    "default_title": "Sahibinden M2",
+    "default_popup": "index.html"
+  }
+}
